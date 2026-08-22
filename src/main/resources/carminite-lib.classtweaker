@@ -1,0 +1,13 @@
+classTweaker v2 official
+
+# Comment each CT with where it needed to be used and why
+
+# Interface Injections
+transitive-inject-interface net/minecraft/core/HolderLookup$Provider carminite/interfaces/extensions/IHolderLookupProviderExtension
+transitive-inject-interface net/minecraft/world/level/Level carminite/interfaces/extensions/ILevelExtension
+transitive-inject-interface net/minecraft/world/level/LevelReader carminite/interfaces/extensions/ILevelReaderExtension
+transitive-inject-interface net/minecraft/world/level/BaseSpawner carminite/interfaces/extensions/IOwnedSpawner
+transitive-inject-interface net/minecraft/world/level/block/state/BlockState carminite/interfaces/extensions/IBlockStateExtension
+transitive-inject-interface net/minecraft/world/level/block/Block carminite/interfaces/extensions/IBlockExtension
+transitive-inject-interface net/minecraft/world/item/Item carminite/interfaces/extensions/IItemExtension
+transitive-inject-interface net/minecraft/world/level/block/BucketPickup carminite/interfaces/extensions/IBucketPickupExtension

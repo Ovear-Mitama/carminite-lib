@@ -9,6 +9,10 @@ fabricApi {
 	}
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/carminite-lib.classtweaker")
+}
+
 dependencies {
 	minecraft("com.mojang:minecraft:${providers.gradleProperty("minecraft_version").get()}")
 	implementation("net.fabricmc:fabric-loader:${providers.gradleProperty("loader_version").get()}")

@@ -24,6 +24,7 @@
 			"carminite.CarminiteData"
 		]
 	},
+	"accessWidener": "carminite-lib.classtweaker",
 	"mixins": [
 		"carminite-lib.mixins.json"
 	],
