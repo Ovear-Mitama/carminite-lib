@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "carminite-lib",
+	"version": "${version}",
+	"name": "Carminite Lib",
+	"description": "A library mod used by the Twilight Forest on Fabric.",
+	"authors": [
+		"Autumn"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "LGPL-2.1",
+	"icon": "assets/carminite-lib/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "carminite.Carminite"
+		],
+		"client": [
+			"carminite.CarminiteClient"
+		],
+		"fabric-datagen": [
+			"carminite.CarminiteData"
+		]
+	},
+	"mixins": [
+		"carminite-lib.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
