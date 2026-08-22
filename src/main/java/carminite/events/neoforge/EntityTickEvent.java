@@ -1,7 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
 import carminite.events.ICancellableEvent;
+import carminite.events.TickEvents;
 import net.minecraft.world.entity.Entity;
 
 public abstract class EntityTickEvent extends EntityEvent {
@@ -21,7 +21,7 @@ public abstract class EntityTickEvent extends EntityEvent {
 
 		@Override
 		public Pre post() {
-			CarminiteEvents.ENTITY_TICK_PRE.invoker().fireEntityTickPre(this);
+			TickEvents.ENTITY_TICK_PRE.invoker().fireEntityTickPre(this);
 			return this;
 		}
 	}
@@ -33,7 +33,7 @@ public abstract class EntityTickEvent extends EntityEvent {
 
 		@Override
 		public Post post() {
-			CarminiteEvents.ENTITY_TICK_POST.invoker().fireEntityTickPost(this);
+			TickEvents.ENTITY_TICK_POST.invoker().fireEntityTickPost(this);
 			return this;
 		}
 	}

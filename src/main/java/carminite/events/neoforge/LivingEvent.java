@@ -1,6 +1,6 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.LivingEvents;
 import net.minecraft.world.entity.LivingEntity;
 
 public abstract class LivingEvent extends EntityEvent {
@@ -23,7 +23,7 @@ public abstract class LivingEvent extends EntityEvent {
 
 		@Override
 		public LivingJumpEvent post() {
-			CarminiteEvents.LIVING_JUMP.invoker().onLivingJump(this);
+			LivingEvents.LIVING_JUMP.invoker().onLivingJump(this);
 			return this;
 		}
 	}

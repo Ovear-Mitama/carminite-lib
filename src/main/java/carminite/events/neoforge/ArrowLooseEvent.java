@@ -1,7 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
 import carminite.events.ICancellableEvent;
+import carminite.events.PlayerEvents;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -42,7 +42,7 @@ public class ArrowLooseEvent extends PlayerEvent implements ICancellableEvent {
 
 	@Override
 	public ArrowLooseEvent post() {
-		CarminiteEvents.ARROW_LOOSE.invoker().onArrowLoose(this);
+		PlayerEvents.ARROW_LOOSE.invoker().onArrowLoose(this);
 		return this;
 	}
 }

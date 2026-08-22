@@ -1,6 +1,6 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.PlayerEvents;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.world.entity.player.Player;
 
@@ -23,7 +23,7 @@ public abstract class AdvancementEvent extends PlayerEvent {
 
 		@Override
 		public AdvancementEarnEvent post() {
-			CarminiteEvents.ADVANCEMENT_EARNED.invoker().onAdvancementEarnedEvent(this);
+			PlayerEvents.ADVANCEMENT_EARNED.invoker().onAdvancementEarnedEvent(this);
 			return this;
 		}
 	}

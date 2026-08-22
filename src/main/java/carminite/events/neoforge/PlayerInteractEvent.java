@@ -1,7 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
 import carminite.events.ICancellableEvent;
+import carminite.events.PlayerEvents;
 import com.google.common.base.Preconditions;
 import net.fabricmc.api.EnvType;
 import net.minecraft.core.BlockPos;
@@ -79,7 +79,7 @@ public abstract class PlayerInteractEvent extends PlayerEvent {
 
 		@Override
 		public RightClickBlock post() {
-			CarminiteEvents.RIGHT_CLICK_BLOCK.invoker().onRightClickBlock(this);
+			PlayerEvents.RIGHT_CLICK_BLOCK.invoker().onRightClickBlock(this);
 			return this;
 		}
 	}
@@ -91,7 +91,7 @@ public abstract class PlayerInteractEvent extends PlayerEvent {
 
 		@Override
 		public LeftClickEmpty post() {
-			CarminiteEvents.LEFT_CLICK_EMPTY.invoker().onEmptyLeftClick(this);
+			PlayerEvents.LEFT_CLICK_EMPTY.invoker().onEmptyLeftClick(this);
 			return this;
 		}
 	}

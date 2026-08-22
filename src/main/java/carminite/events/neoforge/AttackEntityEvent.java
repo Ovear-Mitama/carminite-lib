@@ -1,7 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
 import carminite.events.ICancellableEvent;
+import carminite.events.PlayerEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
@@ -19,7 +19,7 @@ public class AttackEntityEvent extends PlayerEvent implements ICancellableEvent 
 
 	@Override
 	public AttackEntityEvent post() {
-		CarminiteEvents.ATTACK_ENTITY.invoker().onPlayerAttackTarget(this);
+		PlayerEvents.ATTACK_ENTITY.invoker().onPlayerAttackTarget(this);
 		return this;
 	}
 }

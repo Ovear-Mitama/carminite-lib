@@ -1,6 +1,6 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.BlockEvents;
 import carminite.events.ICancellableEvent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
@@ -35,7 +35,7 @@ public class BreakBlockEvent extends BlockEvent implements ICancellableEvent {
 
 	@Override
 	public BreakBlockEvent post() {
-		CarminiteEvents.BREAK_BLOCK.invoker().fireBlockBreak(this);
+		BlockEvents.BREAK_BLOCK.invoker().fireBlockBreak(this);
 		return this;
 	}
 }

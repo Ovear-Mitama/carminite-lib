@@ -1,7 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
 import carminite.events.ICancellableEvent;
+import carminite.events.LivingEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 
@@ -19,7 +19,7 @@ public class LivingDeathEvent extends LivingEvent implements ICancellableEvent {
 
 	@Override
 	public LivingDeathEvent post() {
-		CarminiteEvents.LIVING_DEATH.invoker().onLivingDeath(this);
+		LivingEvents.LIVING_DEATH.invoker().onLivingDeath(this);
 		return this;
 	}
 }

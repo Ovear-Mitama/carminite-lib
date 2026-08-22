@@ -1,6 +1,6 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.EntityEvents;
 import carminite.events.ICancellableEvent;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.HitResult;
@@ -25,7 +25,7 @@ public class ProjectileImpactEvent extends EntityEvent implements ICancellableEv
 
 	@Override
 	public ProjectileImpactEvent post() {
-		CarminiteEvents.PROJECTILE_IMPACT.invoker().onProjectileImpact(this);
+		EntityEvents.PROJECTILE_IMPACT.invoker().onProjectileImpact(this);
 		return this;
 	}
 }

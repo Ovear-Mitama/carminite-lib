@@ -1,0 +1,30 @@
+package carminite.events;
+
+import carminite.events.neoforge.EntityStruckByLightningEvent;
+import carminite.events.neoforge.ProjectileImpactEvent;
+import net.fabricmc.fabric.api.event.Event;
+import net.fabricmc.fabric.api.event.EventFactory;
+
+public final class EntityEvents {
+    public static final Event<LightningStruck> ENTITY_STRUCK_BY_LIGHTNING = EventFactory.createArrayBacked(LightningStruck.class, callbacks -> event -> {
+        for (LightningStruck callback : callbacks) {
+            callback.onEntityStruckByLightning(event);
+        }
+    });
+
+    public static final Event<ProjectileImpact> PROJECTILE_IMPACT = EventFactory.createArrayBacked(ProjectileImpact.class, callbacks -> event -> {
+        for (ProjectileImpact callback : callbacks) {
+            callback.onProjectileImpact(event);
+        }
+    });
+
+    @FunctionalInterface
+    public interface LightningStruck {
+        void onEntityStruckByLightning(EntityStruckByLightningEvent event);
+    }
+
+    @FunctionalInterface
+    public interface ProjectileImpact {
+        void onProjectileImpact(ProjectileImpactEvent event);
+    }
+}

@@ -1,8 +1,7 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.PlayerEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
@@ -56,45 +55,7 @@ public abstract class PlayerEvent extends LivingEvent {
 
 		@Override
 		public HarvestCheck post() {
-			CarminiteEvents.HARVEST_CHECK.invoker().doPlayerHarvestCheck(this);
-			return this;
-		}
-	}
-
-	public static class StartTracking extends PlayerEvent {
-		private final Entity target;
-
-		public StartTracking(Player player, Entity target) {
-			super(player);
-			this.target = target;
-		}
-
-		public Entity getTarget() {
-			return target;
-		}
-
-		@Override
-		public StartTracking post() {
-			CarminiteEvents.START_TRACKING.invoker().onStartEntityTracking(this);
-			return this;
-		}
-	}
-
-	public static class StopTracking extends PlayerEvent {
-		private final Entity target;
-
-		public StopTracking(Player player, Entity target) {
-			super(player);
-			this.target = target;
-		}
-
-		public Entity getTarget() {
-			return target;
-		}
-
-		@Override
-		public StopTracking post() {
-			CarminiteEvents.STOP_TRACKING.invoker().onStopEntityTracking(this);
+			PlayerEvents.HARVEST_CHECK.invoker().doPlayerHarvestCheck(this);
 			return this;
 		}
 	}
@@ -106,7 +67,7 @@ public abstract class PlayerEvent extends LivingEvent {
 
 		@Override
 		public PlayerLoggedInEvent post() {
-			CarminiteEvents.PLAYER_LOGGED_IN.invoker().firePlayerLoggedIn(this);
+			PlayerEvents.PLAYER_LOGGED_IN.invoker().firePlayerLoggedIn(this);
 			return this;
 		}
 	}
@@ -118,7 +79,7 @@ public abstract class PlayerEvent extends LivingEvent {
 
 		@Override
 		public PlayerLoggedOutEvent post() {
-			CarminiteEvents.PLAYER_LOGGED_OUT.invoker().firePlayerLoggedOut(this);
+			PlayerEvents.PLAYER_LOGGED_OUT.invoker().firePlayerLoggedOut(this);
 			return this;
 		}
 	}
@@ -137,7 +98,7 @@ public abstract class PlayerEvent extends LivingEvent {
 
 		@Override
 		public PlayerRespawnEvent post() {
-			CarminiteEvents.PLAYER_RESPAWN.invoker().firePlayerRespawnEvent(this);
+			PlayerEvents.PLAYER_RESPAWN.invoker().firePlayerRespawnEvent(this);
 			return this;
 		}
 	}

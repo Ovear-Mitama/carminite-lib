@@ -1,6 +1,6 @@
 package carminite.events.neoforge;
 
-import carminite.events.CarminiteEvents;
+import carminite.events.EntityEvents;
 import carminite.events.ICancellableEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
@@ -19,7 +19,7 @@ public class EntityStruckByLightningEvent extends EntityEvent implements ICancel
 
 	@Override
 	public EntityStruckByLightningEvent post() {
-		CarminiteEvents.ENTITY_STRUCK_BY_LIGHTNING.invoker().onEntityStruckByLightning(this);
+		EntityEvents.ENTITY_STRUCK_BY_LIGHTNING.invoker().onEntityStruckByLightning(this);
 		return this;
 	}
 }
