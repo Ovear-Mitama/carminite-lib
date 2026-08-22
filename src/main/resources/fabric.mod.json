@@ -8,8 +8,7 @@
 		"Autumn"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/a6tumn/carminite-lib"
 	},
 	"license": "LGPL-2.1",
 	"icon": "assets/carminite-lib/icon.png",
