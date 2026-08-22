@@ -11,4 +11,4 @@ Parts of this library may be derived from previous works done by [NeoForge](http
 
 ## Purpose
 
-This library is published for use by the Twilight Forest on Fabric *and/or* any dependent mods which wish to make use of our events for compatibility.
+This library contains some useful NeoForge compatibility shims and is published for use by the Twilight Forest on Fabric *and/or* any dependent mods which wish to make use of our events for compatibility. The goal is that this library will become smaller over time as we are able to transition to more native Fabric implementations.
