@@ -4,6 +4,7 @@ import carminite.events.neoforge.*;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.level.ServerExplosion;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.ApiStatus;
 import net.minecraft.core.BlockPos;
@@ -14,6 +15,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+
+import java.util.List;
 
 public class EventHooks {
 	public static boolean onEntityStruckByLightning(Entity entity, LightningBolt bolt) {
@@ -67,5 +70,9 @@ public class EventHooks {
 
 	public static boolean onProjectileImpact(Projectile projectile, HitResult ray) {
 		return new ProjectileImpactEvent(projectile, ray).post().isCanceled();
+	}
+
+	public static void onExplosionDetonate(Level level, ServerExplosion explosion, List<Entity> entities, List<BlockPos> blocks) {
+		new ExplosionEvent.Detonate(level, explosion, entities, blocks).post();
 	}
 }
