@@ -1,5 +1,6 @@
 package carminite.events;
 
+import carminite.events.neoforge.EntityJoinLevelEvent;
 import carminite.events.neoforge.EntityStruckByLightningEvent;
 import carminite.events.neoforge.ProjectileImpactEvent;
 import net.fabricmc.fabric.api.event.Event;
@@ -18,6 +19,12 @@ public final class EntityEvents {
         }
     });
 
+    public static final Event<JoinLevel> JOIN_LEVEL = EventFactory.createArrayBacked(JoinLevel.class, callbacks -> event -> {
+        for (JoinLevel callback : callbacks) {
+            callback.onEntityJoinLevel(event);
+        }
+    });
+
     @FunctionalInterface
     public interface LightningStruck {
         void onEntityStruckByLightning(EntityStruckByLightningEvent event);
@@ -26,5 +33,10 @@ public final class EntityEvents {
     @FunctionalInterface
     public interface ProjectileImpact {
         void onProjectileImpact(ProjectileImpactEvent event);
+    }
+
+    @FunctionalInterface
+    public interface JoinLevel {
+        void onEntityJoinLevel(EntityJoinLevelEvent event);
     }
 }

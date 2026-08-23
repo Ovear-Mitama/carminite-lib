@@ -23,6 +23,7 @@
     "MagmaCubeMixin",
     "MapItemMixin",
     "MinecartSpawner$1Mixin",
+    "PersistentEntitySectionManagerMixin",
     "PistonStructureResolverMixin",
     "PlayerAdvancementsMixin",
     "PlayerListMixin",
