@@ -1,7 +1,6 @@
 package carminite.mixin;
 
 import carminite.events.hooks.CommonHooks;
-import carminite.interfaces.markers.ISpecialDestroyBehaviorBlock;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -12,7 +11,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Final;
@@ -89,10 +87,6 @@ public class ServerPlayerGameModeMixin {
 		CallbackInfoReturnable<Boolean> cir
 	) {
 		BlockState state = this.level.getBlockState(pos);
-		Block block = state.getBlock();
-
-		if (block instanceof ISpecialDestroyBehaviorBlock specialDestroyBehaviorBlock) {
-			cir.setReturnValue(specialDestroyBehaviorBlock.canEntityDestroy(state, this.level, pos, player));
-		}
+		cir.setReturnValue(state.carminite$canEntityDestroy(this.level, pos, player));
 	}
 }

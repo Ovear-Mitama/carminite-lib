@@ -1,9 +1,7 @@
 package carminite.mixin;
 
-import carminite.interfaces.markers.ISpecialPathTypeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
@@ -26,10 +24,10 @@ public class WalkNodeEvaluatorMixin {
         CallbackInfoReturnable<PathType> cir
     ) {
         BlockState state = level.getBlockState(pos);
-        Block block = state.getBlock();
+        PathType newPathType = state.carminite$getBlockPathType(level, pos, null);
 
-        if (block instanceof ISpecialPathTypeBlock specialPathTypeBlock) {
-            cir.setReturnValue(specialPathTypeBlock.getBlockPathType(state, level, pos, null));
+        if (newPathType != null) {
+            cir.setReturnValue(newPathType);
         }
     }
 }

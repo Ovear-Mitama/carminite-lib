@@ -1,6 +1,5 @@
 package carminite.mixin;
 
-import carminite.interfaces.markers.ISpecialStateBasedPistonReactionBlock;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.level.block.piston.PistonBaseBlock;
@@ -23,8 +22,9 @@ public class PistonBaseBlockMixin {
         PushReaction original,
         @Local(argsOnly = true, name = "state") BlockState state
     ) {
-        if (state.getBlock() instanceof ISpecialStateBasedPistonReactionBlock specialStateBasedPistonReactionBlock) {
-            return specialStateBasedPistonReactionBlock.getPistonPushReaction(state);
+        PushReaction newReaction = state.getBlock().carminite$getPistonPushReaction(state);
+        if (newReaction != null) {
+            return newReaction;
         }
 
         return original;
