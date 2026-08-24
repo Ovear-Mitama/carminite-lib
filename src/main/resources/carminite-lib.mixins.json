@@ -24,6 +24,7 @@
     "MapItemMixin",
     "MinecartSpawner$1Mixin",
     "PersistentEntitySectionManagerMixin",
+    "PistonBaseBlockMixin",
     "PistonStructureResolverMixin",
     "PlayerAdvancementsMixin",
     "PlayerListMixin",
@@ -38,7 +39,8 @@
     "SlimeMixin",
     "SpawnerBlockEntity$1Mixin",
     "ThrowableProjectileMixin",
-    "TrialSpawnerMixin"
+    "TrialSpawnerMixin",
+    "WalkNodeEvaluatorMixin"
   ],
   "client": [
     "ClientLevelMixin",
