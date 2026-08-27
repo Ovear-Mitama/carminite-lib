@@ -43,6 +43,7 @@
     "WalkNodeEvaluatorMixin"
   ],
   "client": [
+    "BlockEntityRenderDispatcherMixin",
     "ClientLevelMixin",
     "EntityHitboxDebugRendererMixin",
     "ItemInHandRendererMixin",
