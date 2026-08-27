@@ -43,9 +43,11 @@
     "WalkNodeEvaluatorMixin"
   ],
   "client": [
+    "BlockEntityRenderDispatcherMixin",
     "ClientLevelMixin",
     "EntityHitboxDebugRendererMixin",
     "ItemInHandRendererMixin",
+    "LevelRendererMixin",
     "MinecraftMixin",
     "MultiPlayerGameModeMixin"
   ],
