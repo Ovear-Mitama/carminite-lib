@@ -10,7 +10,6 @@
     "BeardifierMixin",
     "BowItemMixin",
     "CamelMixin",
-    "EntityInteractMixin",
     "EntityMixin",
     "ExplosionDamageCalculatorMixin",
     "FireBlockMixin",
