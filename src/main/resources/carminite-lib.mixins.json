@@ -47,6 +47,7 @@
     "ClientLevelMixin",
     "EntityHitboxDebugRendererMixin",
     "ItemInHandRendererMixin",
+    "LevelRendererMixin",
     "MinecraftMixin",
     "MultiPlayerGameModeMixin"
   ],
